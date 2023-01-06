@@ -10,7 +10,7 @@
 # FALSE: '[(])'
 
 # APPROACH
-# Since every opening parentheses will need a corresponding closing parentheses in the correct order, it makes sense for us to use a STACK that tracks all the open parentheses. Each time we hit a close parentheses, we'll check if it's the last item in the stack is the corresponding open parentheses since they need to be closed in order. If it is, we'll remove the last item from the stack.
+# Since every opening parentheses will need a corresponding closing parentheses in the correct order, it makes sense for us to use a STACK that tracks all the open parentheses. Each time we hit a close parentheses, we'll check if the last item in the stack is the corresponding open parentheses since they need to be closed in order. If it is, we'll remove the last item from the stack.
 
 class Solution(object):
     def isValid(self, s):

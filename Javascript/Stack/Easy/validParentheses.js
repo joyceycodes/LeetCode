@@ -6,6 +6,9 @@
 // Open brackets must be closed in the correct order.
 // Every close bracket has a corresponding open bracket of the same type.
 
+// APPROACH
+// Since every opening parentheses will need a corresponding closing parentheses in the correct order, it makes sense for us to use a STACK that tracks all the open parentheses. Each time we hit a close parentheses, we'll check if the last item in the stack is the corresponding open parentheses since they need to be closed in order. If it is, we'll remove the last item from the stack.
+
 var isValid = function(s) {
     let stack = []
     let hashmap = {

@@ -35,3 +35,4 @@ class Solution(object):
         return -1
 
 # time complexity: O(log n)
+# space complexity: O(1)

@@ -28,4 +28,5 @@ class Solution(object):
 
         return prev
 
-#  time complexity: O(n)
+# time complexity: O(n)
+# space complexity: O(1)

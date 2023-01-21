@@ -10,6 +10,7 @@
 #         self.val = val
 #         self.next = next
 
+# ITERATIVELY
 class Solution(object):
     def reverseList(self, head):
         """
@@ -30,3 +31,19 @@ class Solution(object):
 
 # time complexity: O(n)
 # space complexity: O(1)
+
+# RECURSIVELY
+class Solution(object):
+    def reverseListRecursive(self, head):
+        def reverse(curr, prev):
+            if curr is None:
+                return prev
+            else:
+                next = curr.next
+                curr.next = prev
+                return reverse(next, curr)
+
+        return reverse(head, None)
+
+# time complexity: O(n)
+# space complexity: O(n)

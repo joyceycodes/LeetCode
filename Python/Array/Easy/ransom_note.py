@@ -31,5 +31,7 @@ class Solution(object):
                 return False 
         return True
 
-# time complexity: O(n)
+# time complexity: O(n * m)
+    # since we need to iterate over ransomNote in line 28, that's a nested loop
+    # if we use a hashmap to store the letters in magazine, we could bring the time complexity down to O(n + m) since retrievals for dictionaries are O(1)
 # space complexity: O(n)

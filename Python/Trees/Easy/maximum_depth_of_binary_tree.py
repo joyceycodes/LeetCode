@@ -9,19 +9,46 @@
 #         self.left = left
 #         self.right = right
 
+# recursive dfs
 class Solution(object):
     def maxDepth(self, root):
         """
         :type root: TreeNode
         :rtype: int
         """
-        def dfs(root):
-            if not root:
-                return 0
-            
-            left = dfs(root.left)
-            right = dfs(root.right)
+        if not root:
+            return 0
+        
+        left = self.maxDepth(root.left)
+        right = self.maxDepth(root.right)
 
-            return 1+max(left,right)
+        return 1+max(left,right)
 
-        return dfs(root)
+# time complexity: O(n)
+# space complexity: O(n)
+
+# iterative bfs, same time and space complexity but traversing the tree by level
+from collections import deque 
+# deque is a double ended queue
+class Solution(object):
+    def maxDepth(self, root):
+        """
+        :type root: TreeNode
+        :rtype: int
+        """
+        # uses a queue that has the root value initially
+        if not root:
+            return 0
+        
+        level = 0
+        q = deque([root])
+        while q:
+            for i in range(len(q)):
+                node = q.popleft()
+                if node.left:
+                    q.append(node.left)
+                if node.right:
+                    q.append(node.right)
+
+            level += 1
+        return level

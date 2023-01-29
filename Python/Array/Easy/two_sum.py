@@ -21,3 +21,18 @@ class Solution(object):
 
 # time complexity: O(n^2)
 # space complexity: O(1)
+
+# solution with better time complexity using a hashmap to store value and indexes
+class Solution:
+    def twoSum(self, nums: List[int], target: int) -> List[int]:
+        # return indexes of the two nums in nums that add up to the target
+        Hashmap = {}
+        for index, value in enumerate(nums):
+            key = target - value
+            if key in Hashmap:
+                return [Hashmap[key], index]
+            else:
+                Hashmap[value] = index
+
+# time complexity: O(n)
+# space complexity: O(n)

@@ -26,3 +26,4 @@ class Solution:
         longest = 0
         dfs(root)
         return longest
+

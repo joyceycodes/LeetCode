@@ -40,3 +40,23 @@ class Solution(object):
 
 # time complexity: O(n)
 # space complexity: O(n)
+
+# alternate solution
+class Solution:
+    def lengthOfLongestSubstring(self, s: str) -> int:
+        hash = []
+        max_length = 0
+        l = 0
+        r = 0
+
+        while r < len(s):
+            if s[r] not in hash:
+                hash.append(s[r])
+                if len(hash) > max_length:
+                    max_length = len(hash)
+                r += 1
+            else:
+                hash.remove(s[l])
+                l += 1
+        return max_length
+
